@@ -32,23 +32,30 @@ int main()
     cuvant += "";
     drum = "(q0, ";
     drum += cuvant + ")";
-
     int StareCurenta = 0;
-    while(cuvant != ""){
-        int ok = 0;
-        for(int j=0; j<n; j++)
-            if(a[StareCurenta][j].find(cuvant[0]) != string:: npos){
-                    StareCurenta = j;
-                    cuvant.erase(0, 1);
-                    drum += "->(q";
-                    drum +=  ('0' + StareCurenta);
-                    drum += ", " + cuvant + ")";
-                    ok = 1;
-                    break;
+    if(cuvant == "-")
+        if(stariFinale.find('0') != string:: npos){
+            cout<<"Cuvant acceptat"<<endl;
+            cout<<drum<<endl;
+        }
+        else cout<<"Cuvant respins"<<endl;
+    else {
+        while(cuvant != ""){
+            int ok = 0;
+            for(int j=0; j<n; j++)
+                if(a[StareCurenta][j].find(cuvant[0]) != string:: npos){
+                        StareCurenta = j;
+                        cuvant.erase(0, 1);
+                        drum += "->(q";
+                        drum +=  ('0' + StareCurenta);
+                        drum += ", " + cuvant + ")";
+                        ok = 1;
+                        break;
+                }
+            if(ok == 0){
+                cout<<"Cuvant respins"<<endl;
+                break;
             }
-        if(ok == 0){
-            cout<<"Cuvant neacceptat"<<endl;
-            break;
         }
     }
     if(cuvant == ""){
@@ -56,7 +63,7 @@ int main()
             cout<<"Cuvant acceptat"<<endl;
             cout<<drum<<endl;
             }
-        else cout<<"Cuvant neacceptat"<<endl;
+        else cout<<"Cuvant respins"<<endl;
     }
     return 0;
 }
