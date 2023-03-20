@@ -8,7 +8,6 @@ int main()
     ifstream f("date.in");
     int n, nrFin;
     f>>n>>nrFin;
-  //  char x;
     string a[n][n], stariFinale, x;
     for(int i=0; i<nrFin; i++){
         f>>x;
