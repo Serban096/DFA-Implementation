@@ -1,1 +1,1 @@
-# Tema-1-LFA
+Implementarea unui AFD
