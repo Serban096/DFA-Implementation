@@ -1,1 +1,1 @@
-Implementarea unui AFD
+Implementation of a DFA in C++
